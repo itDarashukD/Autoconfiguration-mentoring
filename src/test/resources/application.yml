@@ -18,11 +18,12 @@ spring:
       ddl-auto: true
       generate-ddl: true
 
-  datasource:
-    initialize: true
-
   h2:
     console:
+      # Enable for use H2 Datasource
+#      enabled: false
       enabled: true
       path: /h2-console
 
+  datasource:
+    initialize: true

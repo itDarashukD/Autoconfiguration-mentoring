@@ -23,16 +23,18 @@ spring:
       ddl-auto: true
       generate-ddl: true
 
+  h2:
+    console:
+    # Enable if you use H2 Datasource
+      enabled: false
+#      enabled: true
+      path: /h2-console
+
   datasource:
     initialize: true
 
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-#
-#  datasource:
-#    driver-class-name: org.h2.Driver
-#    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
-#    username: SA
-#    password: q
+#debug: true
+#logging:
+#  level:
+#    org:
+#      springframework : DEBUG

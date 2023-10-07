@@ -23,7 +23,9 @@ public abstract class AbstractTestSupporter {
     }};
 
     private static final String GET_USER_BY_ID = "SELECT * FROM public.\"User\" WHERE id = ?";
-    private static final String IS_EXIST_IN_USER_TABLE = "SELECT count(*) FROM public.\"User\" WHERE id = ?";
+    private static final String
+	   IS_EXIST_IN_USER_TABLE =
+	   "SELECT count(*) FROM public.\"User\" WHERE id = ?";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -37,9 +39,11 @@ public abstract class AbstractTestSupporter {
     }
 
     protected Boolean isExistInDB(long id) {
-        int count = jdbcTemplate.queryForObject(IS_EXIST_IN_USER_TABLE,
-	       new Object[]{id},
-	       Integer.class);
+        int
+	       count =
+	       jdbcTemplate.queryForObject(IS_EXIST_IN_USER_TABLE,
+		      new Object[]{id},
+		      Integer.class);
 
         return count > 0;
     }
