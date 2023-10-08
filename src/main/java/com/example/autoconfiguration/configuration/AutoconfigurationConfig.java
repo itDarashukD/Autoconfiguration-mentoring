@@ -4,16 +4,15 @@ package com.example.autoconfiguration.configuration;
 import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-
+@Profile("developing")
 @Configuration
 public class AutoconfigurationConfig {
 
@@ -40,8 +39,6 @@ public class AutoconfigurationConfig {
                 .addScript("/scripts/hsql/schema-hsqldb.sql")
                 .addScript("/scripts/hsql/data-hsqldb.sql")
                 .build();
-
-
 
         return builder.build();
     }

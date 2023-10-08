@@ -11,8 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 
 @ActiveProfiles("integration-test")
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = {
-        AutoconfigurationApplication.class})
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = {AutoconfigurationApplication.class})
 public abstract class AbstractTestSupporter {
 
 

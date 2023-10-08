@@ -27,6 +27,6 @@ public interface UserDao {
     void updateUser(User user);
 
     @Delete("Delete from public.\"User\" where id=#{userId}")
-    void deleteUser(long userId);
+   void deleteUser(long userId);
 
 }

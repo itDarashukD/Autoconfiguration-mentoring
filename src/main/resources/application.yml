@@ -14,7 +14,7 @@ server:
 spring:
   config:
     activate:
-      on-profile: dev
+      on-profile: developing
 
 
   jpa:
