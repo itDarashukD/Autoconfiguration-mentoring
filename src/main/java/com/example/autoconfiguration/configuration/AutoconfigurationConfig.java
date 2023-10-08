@@ -21,12 +21,6 @@ public class AutoconfigurationConfig {
     @Bean(name = "h2Datasource")
     @ConditionalOnProperty(name = "spring.h2.console.enabled", havingValue = "true")
     DataSource h2Datasource() {
-//        DataSourceBuilder builder = DataSourceBuilder.create();
-//        builder.driverClassName("org.h2.Driver");
-//        builder.url("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1");
-//        builder.username("SA");
-//        builder.password("");
-
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         EmbeddedDatabase db = builder
                 .setType( EmbeddedDatabaseType.H2)
@@ -40,11 +34,6 @@ public class AutoconfigurationConfig {
     @ConditionalOnMissingBean(name = "h2Datasource")
     @Bean(name = "hsqlDatasource")
     DataSource hsqlDatasource() {
-//        DataSourceBuilder builder = DataSourceBuilder.create();
-//        builder.driverClassName("org.hsqldb.jdbc.JDBCDriver");
-//        builder.url("jdbc:hsqldb:mem:localdb;sql.syntax_pgs=true;DB_CLOSE_DELAY=-1");
-//        builder.username("");
-//        builder.password("");
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         EmbeddedDatabase db = builder
                 .setType( EmbeddedDatabaseType.HSQL)
